@@ -2,8 +2,9 @@ import React from 'react';
 import logo from './logo.svg';
 import './App.css';
 import Welcome from './components/Welcome/welcome';
-import Comment from './components/Comment/Comment'
-
+import Comment from './components/Comment/Comment';
+import List from './components/List/List';
+import Clock from './components/Clock/Clock';
 function App() {
   return (
     <div className="App">
@@ -26,6 +27,12 @@ function App() {
       </section>
       <section>
         <Welcome></Welcome>
+      </section>
+      <section>
+        <List></List>
+      </section>
+      <section>
+        <Clock></Clock>
       </section>
     </div>
   );
