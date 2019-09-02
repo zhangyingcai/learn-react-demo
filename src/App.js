@@ -5,6 +5,8 @@ import Welcome from './components/Welcome/welcome';
 import Comment from './components/Comment/Comment';
 import List from './components/List/List';
 import Clock from './components/Clock/Clock';
+import { ReduxCounter } from './redux/reduxcounter'
+import { ChatInput } from './components/Comment/ChatInput'
 function App() {
   return (
     <div className="App">
@@ -33,6 +35,14 @@ function App() {
       </section>
       <section>
         <Clock></Clock>
+      </section>
+      <section>
+        <p>this is a redux component</p>
+        <ReduxCounter></ReduxCounter>
+      </section>
+      <section>
+        <p>this is a input</p>
+        <ChatInput></ChatInput>
       </section>
     </div>
   );
