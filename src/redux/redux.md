@@ -94,4 +94,6 @@ const defaultMergeProps = (stateProps, dispatchProps, ownProps)
 
 
 ## bindActionCreators
+
+
 Zhangyingcai#123

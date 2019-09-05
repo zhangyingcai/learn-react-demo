@@ -5,7 +5,8 @@ class Clock extends React.Component {
         super(props)
         this.state = {
             date: new Date().toLocaleTimeString(),
-            timer: null
+            timer: null,
+            num: 0
         }
     }
     componentWillMount(){
@@ -34,14 +35,17 @@ class Clock extends React.Component {
         console.log('getSnapshotBeforeUpdate')
     }
     click(){
-        this.setState({
-            date: new Date().toLocaleTimeString()
-        })
+        this.setState((prevState)=>({
+            date: new Date().toLocaleTimeString(),
+            num: prevState.num + 1
+        }))
     }
     render() {
         return (
             <div>
                 {this.state.date}
+                <br></br>
+                {this.state.num}
             </div>
         )
     }
