@@ -13,3 +13,5 @@ react 组件学习
 children (react 应该是实现了一个默认的组件传递参数) 之类的 React 元素本质是 对象,在 react 中任何东西都可以同 props 进行传递。
 
 #　特例关系
+
+官方举得　栗子　是 Dialog 中需要实现一个特殊的 WelcomeDialog 

@@ -8,6 +8,7 @@ import Clock from './components/Clock/Clock';
 import { ReduxCounter } from './redux/reduxcounter'
 import { ChatInput } from './components/Comment/ChatInput'
 import { WelcomeDialog } from './components/Component/WelcomeDialog'
+import { RefsComponent } from './components/Refs/Refs'
 function App() {
   return (
     <div className="App">
@@ -48,6 +49,10 @@ function App() {
       <section>
         <p>组件组合示例</p>
         <WelcomeDialog></WelcomeDialog>
+      </section>
+      <section>
+        <p>ref 组件 示例</p>
+        <RefsComponent></RefsComponent>
       </section>
     </div>
   );
