@@ -17,7 +17,7 @@ class SearchInput extends React.Component {
                 ></input>
                 <br></br>
                 <input
-                    type="radio"
+                    type="checkbox"
                     checked={isSocked}
                     onChange={(e)=>this.handleRadioChange(e)}
                 ></input>

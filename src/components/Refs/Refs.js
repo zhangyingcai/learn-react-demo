@@ -23,5 +23,5 @@ export class RefsComponent extends React.Component {
             <Dialog ref={this.myDia}></Dialog>
             <button onClick={this.showMyRef}>show myref</button>
         </div>)
-    }
+    }   
 }

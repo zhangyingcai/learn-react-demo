@@ -2,7 +2,6 @@ import React from 'react'
 import { createStore, bindActionCreators } from 'redux'
 import { Provider, connect } from 'react-redux'
 import { Counter } from './counter'
-import { stat } from 'fs';
 
 // init
 const initState = { count: 0 }

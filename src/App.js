@@ -9,6 +9,7 @@ import { ReduxCounter } from './redux/reduxcounter'
 import { ChatInput } from './components/Comment/ChatInput'
 import { WelcomeDialog } from './components/Component/WelcomeDialog'
 import { RefsComponent } from './components/Refs/Refs'
+import { TodoList } from './redux/TodoList'
 function App() {
   return (
     <div className="App">
@@ -53,6 +54,10 @@ function App() {
       <section>
         <p>ref 组件 示例</p>
         <RefsComponent></RefsComponent>
+      </section>
+      <section>
+        <p>这是一个todo 组件</p>
+        <TodoList></TodoList>
       </section>
     </div>
   );

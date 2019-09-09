@@ -95,5 +95,41 @@ const defaultMergeProps = (stateProps, dispatchProps, ownProps)
 
 ## bindActionCreators
 
+## 异步 action  
 
-Zhangyingcai#123
+前面讲到的都是同步 action
+
+异步 action 本质上是多个 同步 action 组成
+
+## Redux 中间件
+
+中间件用于截获 action ,截获之后 调用 Api , Api 处理完成之后返回成功或者失败的 action，然后会将 action dispatch 给 reducer
+
+常见应用场景
+
+#　设计思想
+
+store 为什么需要不可变数据？
+
+* 性能优化，当 store 发生变化的时候，我们怎么知道数据发生了改变，这就要拷贝对象进行修改，然后深层遍历对象比较改变，很明显，这种对比性能上不高，但是精度会比较高。 store 设计的是通过 引用改变来判读 对象被修改。
+* 易于调试和跟踪
+* 易于推测？ 通过 action 改变
+
+
+这样就可以将ui更新 交给 diff 算法
+
+## 怎么操作不可变数据
+
+原生写法：{...}, Object.assign()
+immutability-helper (一个库)
+immer(一个库)
+
+# 三大原则
+
+单一数据源
+
+state 是只读的
+
+> 只能通过 action 来修改， action 是一个用于描述已经发生事件的普通对象
+
+使用纯函数来执行修改
