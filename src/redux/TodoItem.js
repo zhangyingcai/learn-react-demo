@@ -5,21 +5,16 @@
 import React from 'react'
 
 export class TodoItem extends React.Component {
-    state = {
-        checked: false
-    }
-    onChangeCheckbox(e) {
-        console.log(e)
-        this.props.completeTodo()
+    onChangeCheckbox(id) {
+        this.props.completeTodo(id)
     }
     render() {
         //
-        const { todo, completeTodo, deleteTodo } = this.props
-        const { checked } = this.state
+        const { todo, completeTodo, deleteTodo, completed } = this.props
         return (
             <li>
                 <div className="item">
-                    <input type="checkbox" checked={checked} onChange={(e)=>this.onChangeCheckbox(e)} />
+                    <input type="checkbox" checked={completed} onChange={()=>this.onChangeCheckbox(todo.id)} />
                     <label className="todo-item-label">
                         {todo.text}
                     </label>

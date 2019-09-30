@@ -5,9 +5,14 @@ redux 学习
 方便不同组件之间在状态管理，使用组件传递的话，
 状态管理工具，可以单独运行。
 
+
 # 三个特性
 
-每次更新都产生一个新的redux
+single source of truth
+
+每次更新都产生一个新的 state
+
+纯函数更新 store
 
 # 创建 store 
 

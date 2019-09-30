@@ -7,9 +7,13 @@ import { directive } from '@babel/types';
 export class TodoList extends React.Component {
     state = {
         value: '',
-        todolist: []
+        todolist: [{id:1, text:'123', completed: true}]
     }
-    completeTodo() { }
+    completeTodo = (id) => {
+        const {todolist} = this.state
+        let arr = {...todolist}
+        arr
+     }
     deleteTodo() { }
     onValueChange = (value) => {
         this.setState({
@@ -33,7 +37,8 @@ export class TodoList extends React.Component {
                                 <TodoItem
                                     todo={item}
                                     index={index}
-                                    completeTodo={() => this.completeTodo()}
+                                    completed={item.completed}
+                                    completeTodo={this.completeTodo}
                                     deleteTodo={() => this.completeTodo()}
                                 ></TodoItem>
                             )

@@ -9,12 +9,12 @@ export class TodoInput extends React.Component {
     }
     onVauleSubmit(e) {
         console.log(e)
-        this.props.onValueChange()
+        this.props.onValueChange(e.target.value)
     }
     render() {
         const { value } = this.props
         return (
-            <input type="text" placeholder="请输入内容" value={value} onChange={e => this.valueOnChange(e)} onKeyDown={(e)=>this.onVauleSubmit(e)} />
+            <input type="text" placeholder="请输入内容" value={value} onChange={e => this.valueOnChange(e)} />
         )
     }
 }
