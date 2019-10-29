@@ -1,9 +1,6 @@
 import React from 'react';
 
 class SearchInput extends React.Component {
-    constructor(props){
-        super(props)
-    }
     handleRadioChange(e) {
         this.props.handleRadioChange(e.target.checked)
     }

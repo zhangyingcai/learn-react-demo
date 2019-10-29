@@ -2,9 +2,6 @@ import React from 'react'
 import './ProductTable.css'
 
 class ProductTable extends React.Component {
-    constructor(props){
-        super(props)
-    }
     render() {
         const { category, isSocked, list } = this.props
         console.log(category,isSocked,list)

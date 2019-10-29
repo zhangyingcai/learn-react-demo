@@ -2,7 +2,6 @@
 import React from 'react'
 import { TodoItem } from './TodoItem'
 import { TodoInput } from './TodoInput'
-import { directive } from '@babel/types';
 
 export class TodoList extends React.Component {
     state = {
@@ -11,24 +10,57 @@ export class TodoList extends React.Component {
     }
     completeTodo = (id) => {
         const {todolist} = this.state
-        let arr = {...todolist}
-        arr
+        todolist.forEach(element => {
+            if (element.id === id) {
+                element.completed = !element.completed
+            }
+        });
+        this.setState({
+            todolist
+        })
      }
-    deleteTodo() { }
+    deleteTodo = (id) => { 
+        const {todolist} = this.state
+        const newList = todolist.filter((item) => { 
+            return item.id !== id
+        })
+        this.setState({
+            todolist: newList
+        })
+    }
     onValueChange = (value) => {
         this.setState({
             value: value
         })
     }
+    onToDoInputKeyDown = (e)=>{
+        console.log(e.keyCode)
+        const {value} = this.state
+        switch (e.keyCode) {
+            case 13:
+                value && this.addToDo(value)
+                break;
+        
+            default:
+                break;
+        }
+    }
+    addToDo(text) {
+        const {todolist} = this.state
+        todolist.push({id: todolist.length + 1, text: text, completed: false})
+        this.setState({
+            todolist: todolist
+        })
+    }
     render() {
-        const { } = this.props
         const { value, todolist } = this.state
         return (
             <div>
                 <section>
                     <TodoInput
                         value={value}
-                        onValueChange={this.onValueChange}></TodoInput>
+                        onValueChange={this.onValueChange}
+                        onKeyDown={this.onToDoInputKeyDown}></TodoInput>
                 </section>
                 <ul>
                     {
@@ -39,7 +71,7 @@ export class TodoList extends React.Component {
                                     index={index}
                                     completed={item.completed}
                                     completeTodo={this.completeTodo}
-                                    deleteTodo={() => this.completeTodo()}
+                                    deleteTodo={this.deleteTodo}
                                 ></TodoItem>
                             )
                         })
