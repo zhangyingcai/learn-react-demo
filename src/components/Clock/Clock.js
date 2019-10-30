@@ -5,34 +5,36 @@ class Clock extends React.Component {
         super(props)
         this.state = {
             date: new Date().toLocaleTimeString(),
-            timer: null,
             num: 0
         }
+        this.timer = null
     }
-    componentWillMount(){
-        console.log('componentWillMount')
-    }
+    // The below lifecycles should be removed
+    // componentWillMount(){
+    //     console.log('componentWillMount')
+    // }
     componentDidMount(){
         console.log('componentDidMount')
-        this.timer = setInterval(() => {
-            this.click()
-        }, 1000);
+        // this.timer = setInterval(() => {
+        //     this.click()
+        // }, 1000);
     }
-    componentWillUpdate(){
-        console.log('componentWillUpdate')
-    }
+    // The below lifecycles should be removed
+    // componentWillUpdate(){
+    //     console.log('componentWillUpdate')
+    // }
     componentDidUpdate(){
         console.log('componentDidUpdate')
     }
     componentWillUnmount(){
         console.log('componentWillUnmount')
-        clearInterval(this.state.timer)
-        this.setState({
-            timer: null
-        })
+        if (this.timer) {
+            this.clearTimer()
+        }
     }
     getSnapshotBeforeUpdate(){
         console.log('getSnapshotBeforeUpdate')
+        return null // a snapshot value or null must be return 
     }
     click(){
         this.setState((prevState)=>({
@@ -40,12 +42,30 @@ class Clock extends React.Component {
             num: prevState.num + 1
         }))
     }
+    clickStart = ()=>{
+        if (this.timer) return
+        this.timer = setInterval(() => {
+            this.click()
+        }, 1000);
+    }
+    clickStop = ()=>{
+        if (!this.timer) return
+        this.clearTimer()
+    }
+    clearTimer() {
+        clearInterval(this.timer)
+        this.timer = null
+    }
     render() {
         return (
             <div>
                 {this.state.date}
                 <br></br>
                 {this.state.num}
+                <div>
+                    <button onClick={this.clickStart}>start</button><br/>
+                    <button onClick={this.clickStop}>stop</button><br/>
+                </div>
             </div>
         )
     }

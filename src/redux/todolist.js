@@ -68,7 +68,7 @@ export class TodoList extends React.Component {
                             return (
                                 <TodoItem
                                     todo={item}
-                                    index={index}
+                                    key={index}
                                     completed={item.completed}
                                     completeTodo={this.completeTodo}
                                     deleteTodo={this.deleteTodo}
