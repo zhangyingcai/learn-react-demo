@@ -68,3 +68,5 @@ import {a} from 'test.js'
 首先 import 执行的时候是在编译时执行， 所以 import, export 只能放到模块的顶层, 同时也导致无法在运行时加载模块
 
 node  中 require 是运行时加载模块，并且是异步的
+
+* 通配符 可用于表示任意的 导入模块

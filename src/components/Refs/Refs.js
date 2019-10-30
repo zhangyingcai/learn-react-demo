@@ -1,11 +1,11 @@
 import React from 'react'
 
-function Dialog(){
-    return(<div>
-        <h1>titile</h1>
-        <p>message</p>
-    </div>)
-}
+// function Dialog(){
+//     return(<div>
+//         <h1>titile</h1>
+//         <p>message</p>
+//     </div>)
+// }
 
 class Test extends React.Component {
     render() {

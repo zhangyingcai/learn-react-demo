@@ -32,7 +32,8 @@ class Clock extends React.Component {
             this.clearTimer()
         }
     }
-    getSnapshotBeforeUpdate(){
+    getSnapshotBeforeUpdate(pre,curr){
+        console.log(pre, curr)
         console.log('getSnapshotBeforeUpdate')
         return null // a snapshot value or null must be return 
     }
@@ -57,6 +58,7 @@ class Clock extends React.Component {
         this.timer = null
     }
     render() {
+        // 最简单的内存泄漏可以通过 隐藏计时器ui 实现
         return (
             <div>
                 {this.state.date}

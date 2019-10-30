@@ -13,6 +13,7 @@ import { RefsComponent } from './components/Refs/Refs'
 import { TodoList } from './redux/todolist'
 // import {RxjsComponent} from './rxjs/RxjsComponent'
 // import { FunctionLikeBtn } from './components/Comment/FunctionLikeBtn'
+import {RefsList} from './components/Refs/RefsLIst'
 function App() {
   return (
     <div className="App">
@@ -72,6 +73,10 @@ function App() {
         <p>这是一个函数组件</p>
         <FunctionLikeBtn></FunctionLikeBtn>
       </section> */}
+      <section>
+        <p>这是一个列表 怎么更新当前 dom 的状态</p>
+        <RefsList></RefsList>
+      </section>
     </div>
   );
 }
