@@ -14,6 +14,7 @@ import { TodoList } from './redux/todolist'
 // import {RxjsComponent} from './rxjs/RxjsComponent'
 // import { FunctionLikeBtn } from './components/Comment/FunctionLikeBtn'
 import {RefsList} from './components/Refs/RefsLIst'
+import { UseStateCount } from './components/Hook/useState/UseStateCount'
 function App() {
   return (
     <div className="App">
@@ -76,6 +77,10 @@ function App() {
       <section>
         <p>这是一个列表 怎么更新当前 dom 的状态</p>
         <RefsList></RefsList>
+      </section>
+      <section>
+        <p>hook useState</p>
+        <UseStateCount></UseStateCount>
       </section>
     </div>
   );

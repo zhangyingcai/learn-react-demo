@@ -1,7 +1,7 @@
 // 这里是一个 todolist
 import React from 'react'
 import { TodoItem } from './TodoItem'
-import { TodoInput } from './TodoInput'
+import { TodoInput } from './todoinput'
 
 export class TodoList extends React.Component {
     state = {
