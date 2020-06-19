@@ -1,6 +1,6 @@
-import React, {useState,useEffect} from 'react';
+import React, {useState,useEffect, useContext} from 'react';
 
-export function UseStateCount(){
+export const UseStateCount = () =>{
     const [count, setCount] = useState(0)
     //useState 返回一对值 当前状态和一个让你更新它的函数
     //不会吧新的 state 和 旧的 state 进行合并
@@ -13,12 +13,16 @@ export function UseStateCount(){
     })
     // useEffect 第二个参数用于性能优化，需要传递一个数组
 
+    // 
+    
     return(
         <div>
             <p>you clicked {count} times</p>
             <button onClick={()=>setCount(count+1)}>click me</button>
             <p>you clicked {recount.time} times</p>
             <button onClick={()=>setRecount({time:recount.time+1,title:'upadate'})}>click me</button>
+            <br/>
+            <p>定时器{}</p>
         </div>
     )
 }

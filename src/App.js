@@ -15,6 +15,7 @@ import { TodoList } from './redux/todolist'
 // import { FunctionLikeBtn } from './components/Comment/FunctionLikeBtn'
 import {RefsList} from './components/Refs/RefsLIst'
 import { UseStateCount } from './components/Hook/useState/UseStateCount'
+import { UseReducerCount } from './components/Hook/useState/UseReducerCount'
 function App() {
   return (
     <div className="App">
@@ -81,6 +82,10 @@ function App() {
       <section>
         <p>hook useState</p>
         <UseStateCount></UseStateCount>
+      </section>
+      <section>
+        <p>UseReducerCount</p>
+        <UseReducerCount></UseReducerCount>
       </section>
     </div>
   );
