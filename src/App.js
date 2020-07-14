@@ -16,7 +16,9 @@ import { TodoList } from './redux/todolist'
 import {RefsList} from './components/Refs/RefsLIst'
 import { UseStateCount } from './components/Hook/useState/UseStateCount'
 import { UseReducerCount } from './components/Hook/useState/UseReducerCount'
+import a from './es6/export'
 function App() {
+  console.log(a)
   return (
     <div className="App">
       <header className="App-header">
